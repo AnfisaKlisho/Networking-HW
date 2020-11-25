@@ -21,6 +21,17 @@ class ViewController: UIViewController {
         loadData()
         // Do any additional setup after loading the view.
     }
+    
+    func showAlert(message: String){
+        let alert = UIAlertController(title: "error occurred", message: message, preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alert.addAction(okButton)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     //MARK:-Configure table view
     func configureTableView(){
         tableView.delegate = self
@@ -38,9 +49,7 @@ class ViewController: UIViewController {
             if let error = error {
                 //error handling
                print(error)
-                let alert = UIAlertController(title: "error occurred", message: error.localizedDescription, preferredStyle: .alert)
-                
-                self.present(alert, animated: true, completion: nil)
+                self.showAlert(message: error.localizedDescription)
                 
                 return
                 
@@ -50,9 +59,7 @@ class ViewController: UIViewController {
             guard let data = data
             else{
                 //error handling
-                let alert = UIAlertController(title: "error occurred", message: "\(response.statusCode)", preferredStyle: .alert)
-                
-                self.present(alert, animated: true, completion: nil)
+                self.showAlert(message: "\(response.statusCode)")
              
                 return
             }
