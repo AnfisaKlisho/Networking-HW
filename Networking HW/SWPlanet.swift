@@ -10,7 +10,7 @@ import Foundation
 struct SWPlanet{
     var name: String
     var population: String
-    var diameter: Int
+    var diameter: String
     var climate: String
 }
 
