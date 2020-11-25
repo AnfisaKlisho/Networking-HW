@@ -17,22 +17,31 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         loadData()
         // Do any additional setup after loading the view.
+    }
+    //MARK:-Configure table view
+    func configureTableView(){
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     //MARK:-Load data
     private func loadData(){
-        let url = URL(string: "https://swapi.dev/api/planets/")!
+        let url = URL(string: "https://swapi.dev/api/planets")!
         
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         
         let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
+                //error handling
                print(error)
-                //alert
-                //error.localizedDescription
+                let alert = UIAlertController(title: "error occurred", message: error.localizedDescription, preferredStyle: .alert)
+                
+                self.present(alert, animated: true, completion: nil)
+                
                 return
                 
             }
@@ -40,8 +49,11 @@ class ViewController: UIViewController {
             let response = response as! HTTPURLResponse
             guard let data = data
             else{
-                //error
-                //response.statusCode
+                //error handling
+                let alert = UIAlertController(title: "error occurred", message: "\(response.statusCode)", preferredStyle: .alert)
+                
+                self.present(alert, animated: true, completion: nil)
+             
                 return
             }
             

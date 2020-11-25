@@ -13,10 +13,15 @@ class PlanetCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var populationLabel: UILabel!
+    
     @IBOutlet weak var peopleLabel: UILabel!
+    
+    @IBOutlet weak var diamLabel: UILabel!
     
     @IBOutlet weak var diameterLabel: UILabel!
     
+    @IBOutlet weak var climLabel: UILabel!
     
     @IBOutlet weak var climateLabel: UILabel!
     
