@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Star Wars Planets-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Networking_HW" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="88" width="428" height="804"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetCell" rowHeight="132" id="JIn-hu-Fg2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlanetCell" rowHeight="132" id="JIn-hu-Fg2" customClass="PlanetCell" customModule="Networking_HW" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="428" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JIn-hu-Fg2" id="c3q-oy-rAZ">
@@ -94,6 +94,12 @@
                                                 <constraint firstItem="4n1-Te-BXv" firstAttribute="top" secondItem="c3q-oy-rAZ" secondAttribute="topMargin" constant="5" id="zDi-QE-Xpr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="climateLabel" destination="t0g-7u-qcs" id="V2x-Pt-LRI"/>
+                                            <outlet property="diameterLabel" destination="vhH-Qj-x1B" id="Nzo-H3-mwW"/>
+                                            <outlet property="nameLabel" destination="4n1-Te-BXv" id="ULX-aH-ifX"/>
+                                            <outlet property="peopleLabel" destination="Q3M-Zd-uzG" id="R6M-TN-raF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -107,7 +113,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V8Y-RK-YQu" secondAttribute="bottom" id="hbM-Fv-a1W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Bgi-A3-KgE"/>
+                    <navigationItem key="navigationItem" title="Star Wars Planets" id="Bgi-A3-KgE"/>
+                    <connections>
+                        <outlet property="tableView" destination="V8Y-RK-YQu" id="wui-G0-e4s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
